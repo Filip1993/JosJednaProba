@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/swMorningAsk"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/how_do_you_feel_today"
+                    android:text="@string/of_course"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView

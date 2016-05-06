@@ -111,7 +111,17 @@ public class MorningAskFragment extends Fragment {
                 //minimalan progress je 0, a maksimalan 100...
                 // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
                 sbMorningFeel.setMax(100);
-                if (progress)
+                if (progress < 20) {
+                    tvMorningFeel.setText(getResources().getString(R.string.crappy));
+                } else if (progress >= 20 && progress < 40) {
+                    tvMorningFeel.setText(getResources().getString(R.string.so_so));
+                } else if (progress >= 40 && progress < 60) {
+                    tvMorningFeel.setText(getResources().getString(R.string.good));
+                } else if (progress >= 60 && progress < 80) {
+                    tvMorningFeel.setText(getResources().getString(R.string.happy));
+                } else if (progress >= 80 && progress <= 100) {
+                    tvMorningFeel.setText(getResources().getString(R.string.excited));
+                }
             }
 
             @Override
