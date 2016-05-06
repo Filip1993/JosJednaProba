@@ -3,9 +3,13 @@ package com.filipkesteli.josjednaproba;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.AppCompatSeekBar;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -13,7 +17,29 @@ import android.view.ViewGroup;
  */
 public class MorningAskFragment extends Fragment {
 
+    private CardView cvMorningFeel;
+    private CardView cvMorningMotivated;
+    private CardView cvMorningPlans;
+    private CardView cvMorningHappy;
+    private CardView cvMorningAdventure;
 
+    private SwitchCompat swMorningFeel;
+    private SwitchCompat swMorningMotivated;
+    private SwitchCompat swMorningPlans;
+    private SwitchCompat swMorningHappy;
+    private SwitchCompat swMorningAdventure;
+
+    private TextView tvMorningFeel;
+    private TextView tvMorningMotivated;
+    private TextView tvMorningPlans;
+    private TextView tvMorningHappy;
+    private TextView tvMorningAdventure;
+
+    private AppCompatSeekBar sbMorningFeel;
+    private AppCompatSeekBar sbMorningMotivated;
+    private AppCompatSeekBar sbMorningPlans;
+    private AppCompatSeekBar sbMorningHappy;
+    private AppCompatSeekBar sbMorningAdventure;
 
     public MorningAskFragment() {
         // Required empty public constructor
@@ -24,7 +50,42 @@ public class MorningAskFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_morning_ask, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_morning_ask, container, false);
+
+        initWidgets(v);
+        setupListeners();
+
+        return v;
     }
 
+    private void initWidgets(View v) {
+        cvMorningFeel = (CardView) v.findViewById(R.id.cvMorningFeel);
+        cvMorningMotivated = (CardView) v.findViewById(R.id.cvMorningMotivated);
+        cvMorningPlans = (CardView) v.findViewById(R.id.cvMorningPlans);
+        cvMorningHappy = (CardView) v.findViewById(R.id.cvMorningHappy);
+        cvMorningAdventure = (CardView) v.findViewById(R.id.cvMorningAdventure);
+
+        swMorningFeel = (SwitchCompat) v.findViewById(R.id.swMorningFeel);
+        swMorningMotivated = (SwitchCompat) v.findViewById(R.id.swMorningMotivated);
+        swMorningPlans = (SwitchCompat) v.findViewById(R.id.swMorningPlans);
+        swMorningHappy = (SwitchCompat) v.findViewById(R.id.swMorningHappy);
+        swMorningAdventure = (SwitchCompat) v.findViewById(R.id.swMorningAdventure);
+
+        tvMorningFeel = (TextView) v.findViewById(R.id.tvMorningFeel);
+        tvMorningMotivated = (TextView) v.findViewById(R.id.tvMorningMotivated);
+        tvMorningPlans = (TextView) v.findViewById(R.id.tvMorningPlans);
+        tvMorningHappy = (TextView) v.findViewById(R.id.tvMorningHappy);
+        tvMorningAdventure = (TextView) v.findViewById(R.id.tvMorningAdventure);
+
+        sbMorningFeel = (AppCompatSeekBar) v.findViewById(R.id.sbMorningFeel);
+        sbMorningMotivated = (AppCompatSeekBar) v.findViewById(R.id.sbMorningMotivated);
+        sbMorningPlans = (AppCompatSeekBar) v.findViewById(R.id.sbMorningPlans);
+        sbMorningHappy = (AppCompatSeekBar) v.findViewById(R.id.sbMorningHappy);
+        sbMorningAdventure = (AppCompatSeekBar) v.findViewById(R.id.sbMorningAdventure);
+    }
+
+    private void setupListeners() {
+
+    }
 }
