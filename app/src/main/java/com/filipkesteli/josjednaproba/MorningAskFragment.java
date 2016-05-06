@@ -134,5 +134,181 @@ public class MorningAskFragment extends Fragment {
 
             }
         });
+
+
+        swMorningMotivated.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cvMorningMotivated.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                    //cvMorningFeel.setCardBackgroundColor(getResources().getColor(R.color.amber_50, null));
+                } else if (!isChecked){
+                    cvMorningMotivated.setCardBackgroundColor(Color.parseColor("#FFCDD2"));
+                    sbMorningMotivated.setProgress(0);
+                    tvMorningMotivated.setText("");
+                }
+            }
+        });
+        sbMorningMotivated.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //minimalan progress je 0, a maksimalan 100...
+                // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
+                sbMorningMotivated.setMax(100);
+                if (progress < 20) {
+                    tvMorningMotivated.setText(getResources().getString(R.string.crappy));
+                } else if (progress >= 20 && progress < 40) {
+                    tvMorningMotivated.setText(getResources().getString(R.string.so_so));
+                } else if (progress >= 40 && progress < 60) {
+                    tvMorningMotivated.setText(getResources().getString(R.string.good));
+                } else if (progress >= 60 && progress < 80) {
+                    tvMorningMotivated.setText(getResources().getString(R.string.happy));
+                } else if (progress >= 80 && progress <= 100) {
+                    tvMorningMotivated.setText(getResources().getString(R.string.excited));
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        swMorningPlans.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cvMorningPlans.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                    //cvMorningFeel.setCardBackgroundColor(getResources().getColor(R.color.amber_50, null));
+                } else if (!isChecked){
+                    cvMorningPlans.setCardBackgroundColor(Color.parseColor("#FFCDD2"));
+                    sbMorningPlans.setProgress(0);
+                    tvMorningPlans.setText("");
+                }
+            }
+        });
+        sbMorningPlans.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //minimalan progress je 0, a maksimalan 100...
+                // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
+                sbMorningPlans.setMax(100);
+                if (progress < 20) {
+                    tvMorningPlans.setText(getResources().getString(R.string.crappy));
+                } else if (progress >= 20 && progress < 40) {
+                    tvMorningPlans.setText(getResources().getString(R.string.so_so));
+                } else if (progress >= 40 && progress < 60) {
+                    tvMorningPlans.setText(getResources().getString(R.string.good));
+                } else if (progress >= 60 && progress < 80) {
+                    tvMorningPlans.setText(getResources().getString(R.string.happy));
+                } else if (progress >= 80 && progress <= 100) {
+                    tvMorningPlans.setText(getResources().getString(R.string.excited));
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        swMorningHappy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cvMorningHappy.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                    //cvMorningFeel.setCardBackgroundColor(getResources().getColor(R.color.amber_50, null));
+                } else if (!isChecked){
+                    cvMorningHappy.setCardBackgroundColor(Color.parseColor("#FFCDD2"));
+                    sbMorningHappy.setProgress(0);
+                    tvMorningHappy.setText("");
+                }
+            }
+        });
+        sbMorningHappy.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //minimalan progress je 0, a maksimalan 100...
+                // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
+                sbMorningHappy.setMax(100);
+                if (progress < 20) {
+                    tvMorningHappy.setText(getResources().getString(R.string.crappy));
+                } else if (progress >= 20 && progress < 40) {
+                    tvMorningHappy.setText(getResources().getString(R.string.so_so));
+                } else if (progress >= 40 && progress < 60) {
+                    tvMorningHappy.setText(getResources().getString(R.string.good));
+                } else if (progress >= 60 && progress < 80) {
+                    tvMorningHappy.setText(getResources().getString(R.string.happy));
+                } else if (progress >= 80 && progress <= 100) {
+                    tvMorningHappy.setText(getResources().getString(R.string.excited));
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        swMorningAdventure.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cvMorningAdventure.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                    //cvMorningFeel.setCardBackgroundColor(getResources().getColor(R.color.amber_50, null));
+                } else if (!isChecked){
+                    cvMorningAdventure.setCardBackgroundColor(Color.parseColor("#FFCDD2"));
+                    sbMorningAdventure.setProgress(0);
+                    tvMorningAdventure.setText("");
+                }
+            }
+        });
+        sbMorningAdventure.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //minimalan progress je 0, a maksimalan 100...
+                // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
+                sbMorningAdventure.setMax(100);
+                if (progress < 20) {
+                    tvMorningAdventure.setText(getResources().getString(R.string.crappy));
+                } else if (progress >= 20 && progress < 40) {
+                    tvMorningAdventure.setText(getResources().getString(R.string.so_so));
+                } else if (progress >= 40 && progress < 60) {
+                    tvMorningAdventure.setText(getResources().getString(R.string.good));
+                } else if (progress >= 60 && progress < 80) {
+                    tvMorningAdventure.setText(getResources().getString(R.string.happy));
+                } else if (progress >= 80 && progress <= 100) {
+                    tvMorningAdventure.setText(getResources().getString(R.string.excited));
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
