@@ -1,6 +1,7 @@
 package com.filipkesteli.josjednaproba;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatSeekBar;
@@ -9,6 +10,8 @@ import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 
@@ -86,6 +89,40 @@ public class MorningAskFragment extends Fragment {
     }
 
     private void setupListeners() {
+        //imamo 2 dijela koja treba obaviti:
+        //(1)SwitchCompat -> na pritisak gumba, treba se promijeniti boja CardView-a
+        //(2)AppCompatSeekBar -> na promjenu progress-a, treba se promijeniti TextView
+        swMorningFeel.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    cvMorningFeel.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                    //cvMorningFeel.setCardBackgroundColor(getResources().getColor(R.color.amber_50, null));
+                } else if (!isChecked){
+                    cvMorningFeel.setCardBackgroundColor(Color.parseColor("#FFCDD2"));
+                    sbMorningFeel.setProgress(0);
+                    tvMorningFeel.setText("");
+                }
+            }
+        });
+        sbMorningFeel.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //minimalan progress je 0, a maksimalan 100...
+                // ajmo to i ovdje eksplicitno napisati da nismo vezani uz xml sto se tice toga
+                sbMorningFeel.setMax(100);
+                if (progress)
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }

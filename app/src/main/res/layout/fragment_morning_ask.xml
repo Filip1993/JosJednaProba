@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red_100"
+    android:background="@color/red_200"
     android:fillViewport="false"
     tools:context="com.filipkesteli.josjednaproba.MainActivity">
 
@@ -19,6 +19,7 @@
             android:layout_height="240dp"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="16dp"
+            android:background="@color/white"
             card_view:cardUseCompatPadding="true">
 
             <RelativeLayout
